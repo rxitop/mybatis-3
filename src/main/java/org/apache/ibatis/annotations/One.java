@@ -29,8 +29,15 @@ import org.apache.ibatis.mapping.FetchType;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({})
 public @interface One {
+  /**
+   * @return 已映射语句（也就是映射器方法）的全限定名
+   */
   String select() default "";
 
+  /**
+   * 加载类型，默认为 DEFAULT，其他类型还有 LAZY | EAGER
+   * @return
+   */
   FetchType fetchType() default FetchType.DEFAULT;
 
 }

@@ -32,6 +32,8 @@ public @interface DeleteProvider {
   /**
    * Specify a type that implements an SQL provider method.
    *
+   * 提供的类
+   *
    * @return a type that implements an SQL provider method
    * @since 3.5.2
    * @see #type()
@@ -43,6 +45,9 @@ public @interface DeleteProvider {
    * <p>
    * This attribute is alias of {@link #value()}.
    * </p>
+   *
+   * 提供的类型，value 的别名
+   *
    * @return a type that implements an SQL provider method
    * @see #value()
    */
@@ -64,6 +69,8 @@ public @interface DeleteProvider {
    *     the MyBatis will search and use a fallback method that named {@code provideSql} from specified type
    *   </li>
    * </ul>
+   *
+   * 提供的方法
    *
    * @return a method name of method for providing an SQL
    */

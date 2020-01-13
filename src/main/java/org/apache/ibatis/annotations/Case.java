@@ -27,11 +27,27 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({})
 public @interface Case {
+  /**
+   * 值
+   * @return
+   */
   String value();
 
+  /**
+   * 对应的类型
+   * @return
+   */
   Class<?> type();
 
+  /**
+   * 结果集
+   * @return
+   */
   Result[] results() default {};
 
+  /**
+   * 参数集合
+   * @return
+   */
   Arg[] constructArgs() default {};
 }

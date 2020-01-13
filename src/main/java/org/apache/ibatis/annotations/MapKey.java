@@ -28,5 +28,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface MapKey {
+
+  /**
+   * @return Map 的键名
+   */
   String value();
 }

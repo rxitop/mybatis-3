@@ -28,5 +28,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Insert {
+  /**
+   * 插入语句，类型为数组，表示 SQL 语句可以分为多段
+   * @return
+   */
   String[] value();
 }

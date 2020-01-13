@@ -31,23 +31,49 @@ import org.apache.ibatis.type.UnknownTypeHandler;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({})
 public @interface Arg {
+  /**
+   * 用户标识是否为 XML 中的 <idArg> 一致的属性
+   * @return
+   */
   boolean id() default false;
 
+  /**
+   * @return 列名
+   */
   String column() default "";
 
+  /**
+   * @return 对应的 Java 类型
+   */
   Class<?> javaType() default void.class;
 
+  /**
+   * @return 对应的 JDBC 类型
+   */
   JdbcType jdbcType() default JdbcType.UNDEFINED;
 
+  /**
+   * @return 类型处理器
+   */
   Class<? extends TypeHandler> typeHandler() default UnknownTypeHandler.class;
 
+  /**
+   * @return
+   */
   String select() default "";
 
+  /**
+   * @return 结果集
+   */
   String resultMap() default "";
 
+  /**
+   * @return 名称
+   */
   String name() default "";
 
   /**
+   * 列名前缀
    * @since 3.5.0
    */
   String columnPrefix() default "";

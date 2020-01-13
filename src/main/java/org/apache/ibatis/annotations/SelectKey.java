@@ -30,15 +30,40 @@ import org.apache.ibatis.mapping.StatementType;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface SelectKey {
+
+  /**
+   * SQL 语句数组
+   * @return
+   */
   String[] statement();
 
+  /**
+   * 主键属性名
+   * @return
+   */
   String keyProperty();
 
+  /**
+   * 主键列名
+   * @return
+   */
   String keyColumn() default "";
 
+  /**
+   * 指明 SQL 语句应被在插入语句的之前还是之后执行
+   * @return
+   */
   boolean before();
 
+  /**
+   * 返回类型
+   * @return
+   */
   Class<?> resultType();
 
+  /**
+   * SQL 语句类型，默认为 PREPARED
+   * @return
+   */
   StatementType statementType() default StatementType.PREPARED;
 }

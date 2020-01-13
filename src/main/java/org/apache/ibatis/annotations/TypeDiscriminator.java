@@ -32,13 +32,31 @@ import org.apache.ibatis.type.UnknownTypeHandler;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface TypeDiscriminator {
+  /**
+   * @return 数据库列名
+   */
   String column();
 
+  /**
+   * @return 对应的 Java 类型
+   */
   Class<?> javaType() default void.class;
 
+  /**
+   * 对应的 JDBC 类型
+   * @return
+   */
   JdbcType jdbcType() default JdbcType.UNDEFINED;
 
+  /**
+   * 类型处理器
+   * @return
+   */
   Class<? extends TypeHandler> typeHandler() default UnknownTypeHandler.class;
 
+  /**
+   * 实例数组 @Case
+   * @return
+   */
   Case[] cases();
 }

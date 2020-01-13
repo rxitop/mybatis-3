@@ -36,11 +36,15 @@ public @interface CacheNamespaceRef {
 
   /**
    * A namespace type to reference a cache (the namespace name become a FQCN of specified type).
+   * 指向的缓存类
+   *
    */
   Class<?> value() default void.class;
 
   /**
    * A namespace name to reference a cache.
+   * 指向的命名空间
+   *
    * @since 3.4.2
    */
   String name() default "";

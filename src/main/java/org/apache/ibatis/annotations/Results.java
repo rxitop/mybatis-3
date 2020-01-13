@@ -30,7 +30,13 @@ import java.lang.annotation.Target;
 public @interface Results {
   /**
    * The name of the result map.
+   * 映射结果集标识
+   *
    */
   String id() default "";
+
+  /**
+   * @return @Result 结果数组
+   */
   Result[] value() default {};
 }
